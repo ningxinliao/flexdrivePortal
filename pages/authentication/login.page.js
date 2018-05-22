@@ -1,4 +1,4 @@
-class Authentication {
+class Login {
   // get page objects
   get EMAIL_TEXTFIELD () { return $('//input[@id="email"]'); }
   get PASSWORD_TEXTFIELD () { return $('//input[@id="password"]'); }
@@ -6,11 +6,7 @@ class Authentication {
   get LOGIN_FAILED_MSG () { return $('div.F1Message__flashMessageContent'); }
   get DISMISS_ERROR_MSG () { return $('a.F1Message__flashMessageClose'); }
   get FORGOT_PASSWORD_BUTTON () { return $('//*[text()="Forgot your password?"]'); }
-  get PASSWORD_RESET_EMAIL_FIELD () { return $('//*[text() = "E-mail address"]'); }
-  get CANCEL_BUTTON () { return $('//*[text() = "Cancel"]'); }
-  get CONTINUE_BUTTON () { return $('//*[text() = "Continue"]'); }
-  get RESEND_BUTTON () { return $('//*[text()="Resend it"]'); }
-  get RESET_CONFIRMATION_MSG () { return $('p.margin-bottom-none'); }
+
 
   enterEmail(text) {
     this.EMAIL_TEXTFIELD.setValue(text);
@@ -38,19 +34,6 @@ class Authentication {
     this.FORGOT_PASSWORD_BUTTON.click();
   }
 
-  enterPasswordResetEmail(text) {
-    this.PASSWORD_RESET_EMAIL_FIELD.setValue(text);
-  }
-
-  tapCancel() {
-    this.CANCEL_BUTTON.click();
-  }
-
-  tapContinue() {
-    this.CONTINUE_BUTTON.click();
-  }
-
-
 }
 
-module.exports = Authentication;
+module.exports = Login;
